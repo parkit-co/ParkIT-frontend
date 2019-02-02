@@ -1,0 +1,34 @@
+body {
+    background: #85B34F;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+    color: #000;
+    margin-top: 100px;
+    padding-left: 200pt;
+    padding-right: 200pt;
+}
+
+input {
+    background-color:transparent;
+    border: 0px solid;
+    height:30px;
+}
+input:focus {
+    outline:none;
+}
+
+hr {
+    background-color: #000;
+}
+
+button {
+    text-align: center;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background: #85B34F;
+    width: 800px;
+    height: 50px; 
+}
