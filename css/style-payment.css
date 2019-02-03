@@ -1,0 +1,47 @@
+body {
+  background: #f9f9f0;
+}
+.title {
+background: black;
+height: 200px;
+}
+
+
+.methods {
+  background: #85B34F;
+  height: 70px;
+}
+
+.visa {
+  width:110px;
+  height:90px;
+
+}
+
+ .arrow {
+  padding-top: 20px;
+}
+
+#bottom {
+  background: #85B34F;
+  height: 370px;
+}
+/*
+.col-lg-5 {
+  background: #f9f9f0;
+  border-color: gray;
+
+
+}
+.col-lg-12 {
+    background: #f9f9f0;
+
+}
+
+.col-lg-2 {
+  background: #f9f9f0;
+  border: 2px;
+  border-color: gray;
+} */
+
+/* p.groove {border-style: groove;} */

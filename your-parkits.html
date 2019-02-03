@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your ParkITs</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles-your-parkit.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+  <div class="container-fluid" style = "padding-left: 0px; padding-right:0px;">
+    <div class="row">
+      <h1 class = "title">Your ParkITs</h1>
+  </div>
+
+  <!-- Tab links -->
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Past')"id="defaultOpen">Past</button>
+    <button class="tablinks" onclick="openCity(event, 'Current')">Current</button>
+
+  </div>
+
+  <!-- Tab content -->
+  <div id="Past" class="tabcontent" style = "padding-left: 0; padding-right:0; padding-top: 0">
+    <div style = "padding-top:15px; color: white"class="col-lg-6">
+      <h3>Honda Cr-V SRMK200</h3>
+    </div>
+
+    <div style = "padding-top:15px; padding-left:700px; color:white" class="col-lg-6">
+        <h3>CA$15.00</h3>
+    </div>
+
+    <div class="map col-lg-12">
+      <img class = "map1"src="images/map2.png" alt="map1">
+    </div>
+
+    <div style = "padding-top:15px; color:white"class="col-lg-6">
+      <h3>Honda Cr-V SRMK200</h3>
+    </div>
+
+    <div style = "padding-top:15px; padding-left:700px; color:white" class="col-lg-6">
+        <h3>CA$25.00</h3>
+    </div>
+
+    <div class="map col-lg-12">
+      <img styles = "height: 400px" class = "map1"src="images/map1.png" alt="map2">
+    </div>
+
+
+
+  </div>
+
+  <div id="Current" class="tabcontent">
+    <h3>Current</h3>
+    <p></p>
+  </div>
+
+
+  <div class="wrapper">
+      <!-- Sidebar -->
+      <nav id="sidebar">
+
+          <div id="dismiss">
+              <i class="fas fa-arrow-left"></i>
+          </div>
+
+          <div class="sidebar-header">
+              <h3>Bootstrap Sidebar</h3>
+          </div>
+
+          <ul class="list-unstyled components">
+              <p>Dummy Heading</p>
+              <li class="active">
+                  <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
+                  <ul class="collapse list-unstyled" id="homeSubmenu">
+                      <li>
+                          <a href="#">Home 1</a>
+                      </li>
+                      <li>
+                          <a href="#">Home 2</a>
+                      </li>
+                      <li>
+                          <a href="#">Home 3</a>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="#">About</a>
+                  <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+                  <ul class="collapse list-unstyled" id="pageSubmenu">
+                      <li>
+                          <a href="#">Page 1</a>
+                      </li>
+                      <li>
+                          <a href="#">Page 2</a>
+                      </li>
+                      <li>
+                          <a href="#">Page 3</a>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="#">Portfolio</a>
+              </li>
+              <li>
+                  <a href="#">Contact</a>
+              </li>
+          </ul>
+      </nav>
+
+      <!-- Page Content -->
+      <div id="content">
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+
+                  <button type="button" id="sidebarCollapse" class="btn btn-info">
+                      <i class="fas fa-align-left"></i>
+                      <span>Toggle Sidebar</span>
+                  </button>
+              </div>
+          </nav>
+      </div>
+      <!-- Dark Overlay element -->
+      <div class="overlay"></div>
+  </div>
+
+
+  <script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#sidebar").mCustomScrollbar({
+            theme: "minimal"
+        });
+
+        $('#dismiss, .overlay').on('click', function () {
+            // hide sidebar
+            $('#sidebar').removeClass('active');
+            // hide overlay
+            $('.overlay').removeClass('active');
+        });
+
+        $('#sidebarCollapse').on('click', function () {
+            // open sidebar
+            $('#sidebar').addClass('active');
+            // fade in the overlay
+            $('.overlay').addClass('active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+    });
+</script>
+
+  <!-- <div class="container">
+    <h2>Dynamic Tabs</h2>
+    <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
+
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+      <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+      <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+      <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+    </ul> -->
+<!--
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade in active">
+        <h3>HOME</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h1>hey</h1>
+      </div>
+      <div id="menu1" class="tab-pane fade">
+        <h3>Menu 1</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div id="menu2" class="tab-pane fade">
+        <h3>Menu 2</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      </div>
+      <div id="menu3" class="tab-pane fade">
+        <h3>Menu 3</h3>
+        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
+    </div>
+  </div> -->
+
+
+
+
+
+
+  </body>
+</html>

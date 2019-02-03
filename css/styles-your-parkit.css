@@ -1,0 +1,127 @@
+.row {
+
+  height: 130px;
+  background: black;
+  margin-right: 0px;
+}
+/* body{
+
+} */
+
+.title {
+  color: white;
+  padding-top: 50px;
+  padding-left: 60px;
+  font-size: 4rem;
+
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  font-size: 2rem;
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 3px 70px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #A0A0A0;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #383838;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.col-lg-6 {
+
+  height: 50px;
+  background: #85B34F;
+}
+
+.map1 {
+  width: 100%;
+  height:300px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.map {
+
+  height: 300px;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* .bottom {
+  background: #85B34F;
+  height: 200px;
+  width: auto;
+} */
+
+body {
+  background: #85B34F;
+}
+
+.wrapper {
+    display: block;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* top layer */
+    z-index: 9999;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    /* full screen */
+    width: 100vw;
+    height: 100vh;
+    /* transparent black */
+    background: rgba(0, 0, 0, 0.7);
+    /* middle layer, i.e. appears below the sidebar */
+    z-index: 998;
+    opacity: 0;
+    /* animate the transition */
+    transition: all 0.5s ease-in-out;
+}
+/* display .overlay when it has the .active class */
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    /* top right corner of the sidebar */
+    top: 10px;
+    right: 10px;
+}
