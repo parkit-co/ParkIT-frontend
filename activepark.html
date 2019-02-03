@@ -69,22 +69,16 @@
     <a href="payment.html" target="_blank">Payments</a>
     <a href="settings.html" target="_blank">Settings</a>
   </div>
-
-
+ 
+ 
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-  <section id="header">
-    <div class="title">
+  <section id="header" class="title">
       <h1 style="color: white; padding-top: 60px; padding-left: 20px; padding-left: 70px;">Active Parking</h1>
-    </div>
   </section>
-
-  <section id="title">
-    <div class="model">
+ 
+  <section id="title" class="model">
       <h4 style="color:black; padding-top: 20px; padding-left: 70px;">Car Model and License</h4>
       <h4 style="color:white; padding-left: 20px; font-size:1rem;  padding-left: 70px;">Honda Cr-V SRMK200</h4>
-      <h4 style="text-align:center;font-size: 4rem"><span style="color:white">05</span>:<span style="color:white">00</span>:<span style="color:white">53</span></h4>
-      <h5 style="color:white;text-align:center">Hours Minutes Seconds</h5>
-    </div>
   </section>
   <section id="info">
     <div id="details" class="details">
@@ -93,20 +87,20 @@
     </div>
     <div class="session">
       <h2 style="color:white; text-align:center; padding-top:20px;">Session Options</h2>
-
+ 
     </div>
   </section>
-
-
+ 
+ 
     <script>
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
     }
-
+ 
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
     }
-
+ 
     fetch('https://homeparkit.herokuapp.com/client/6TGZ044')
       .then(data => data.json())
       .then(data => {
@@ -120,6 +114,15 @@
         start: "Feb 03, 2019 07:
         */
         const invoice = data.data.invoices.inv00002;
+ 
+        const hours = Math.floor(invoice.duration / 60);
+        const mins = ((invoice.duration - hours * 60) < 10 ? '0' : '') + invoice.duration - hours * 60;
+
+        document.getElementById("title").innerHTML +=
+        `
+        <h4 style="text-align:center;font-size: 4rem"><span style="color:white">${ hours }</span>:<span style="color:white">${ mins }</span>:<span style="color:white">00</span></h4>
+        <h5 style="color:white;text-align:center">Hours Minutes Seconds</h5>
+        `
         document.getElementById("details").innerHTML +=
           `
           <table style="width: 40%; margin-left: 35%">
@@ -154,6 +157,6 @@
           `;
       })
   </script>
-</body>
-
-</html>
+ </body>
+ 
+ </html>
