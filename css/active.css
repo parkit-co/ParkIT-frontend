@@ -5,5 +5,14 @@ height: 200px;
 
 .model {
   background: #85B34F;
-  height: 70px;
+  height: 230px;
+}
+
+body {
+    background: #f9f9f0;
+}
+
+.session {
+  background: black;
+  height: 120px;;
 }

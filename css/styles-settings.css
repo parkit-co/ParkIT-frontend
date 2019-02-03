@@ -1,5 +1,15 @@
 body {
-    background: #85B34F;
+  background: #f9f9f0;
+}
+.title {
+background: black;
+height: 200px;
+}
+
+
+.methods {
+  background: #85B34F;
+  height: 70px;
 }
 
 body {
@@ -7,10 +17,10 @@ body {
     font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
     color: #000;
     display: block;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: auto
 }
 
 input {

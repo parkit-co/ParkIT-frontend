@@ -6,20 +6,112 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="css/active.css">
+  <!-- </head> -->
+
+
+  <style>
+  body {
+    font-family: "Lato", sans-serif;
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  </style>
   </head>
   <body>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="activepark.html" target="_blank">Active Park</a>
+      <a href="your-parkits.html" target="_blank">Your ParkITs</a>
+      <a href="payment.html" target="_blank">Payments</a>
+      <a href="settings.html" target="_blank">Settings</a>
+    </div>
+
+
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
     <section id="header">
       <div class="title">
-        <h1 style = "color: white; padding-top: 60px; padding-left: 20px;">Active Parking</h1>
+        <h1 style = "color: white; padding-top: 60px; padding-left: 20px; padding-left: 70px;">Active Parking</h1>
       </div>
     </section>
 
     <section id="title">
       <div class="model">
-        <h4 style="color:black; padding-top: 20px; padding-left: 20px;"">Car Model and License</h4>
+        <h4 style="color:black; padding-top: 20px; padding-left: 70px;">Car Model and License</h4>
+        <h4 style="color:white; padding-left: 20px; font-size:1rem;  padding-left: 70px;">Honda Cr-V SRMK200</h4>
+        <h4 style="text-align:center;font-size: 4rem"><span style="color:white">05</span>:<span style="color:white">00</span>:<span style="color:white">53</span></h4>
+        <h5 style="color:white;text-align:center">Hours Minutes Seconds</h5>
+      </div>
+    </section>
+    <section id="info">
+      <div id="details" class="details">
+        <h2 style="text-align:center; margin-top:10px;">Parked in Lot A - Bergeron</h2>
+        <h5 style="text-align:center;">(York Univeristy!)</h5>
+      </div>
+      <div class="session">
+        <h2 style="color:white; text-align:center; padding-top:20px;">Session Options</h2>
+
       </div>
     </section>
 
 
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+
+      fetch('')
+
+      document.getElementById("details").innerHTML += `
+        <h4>Transaction Number: </h4>
+        <h4>Zone: </h4>
+        <h4>Start: </h4>
+        <h4>End: </h4>
+        <h4>Parking Fee: </h4>
+        <h4>Convenience Fee: </h4>
+        <h4>Total Fee: </h4>
+        <h4>Payment Info: </h4>
+      `;
+  </script>
   </body>
 </html>
