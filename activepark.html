@@ -78,7 +78,6 @@
  
   <section id="title" class="model">
       <h4 style="color:black; padding-top: 20px; padding-left: 70px;">Car Model and License</h4>
-      <h4 style="color:white; padding-left: 20px; font-size:1rem;  padding-left: 70px;">Honda Cr-V SRMK200</h4>
   </section>
   <section id="info">
     <div id="details" class="details">
@@ -120,6 +119,7 @@
 
         document.getElementById("title").innerHTML +=
         `
+        <h4 style="color:white; padding-left: 20px; font-size:1rem;  padding-left: 70px;">6TGZ044 - ${ data.data.car }</h4>
         <h4 style="text-align:center;font-size: 4rem"><span style="color:white">${ hours }</span>:<span style="color:white">${ mins }</span>:<span style="color:white">00</span></h4>
         <h5 style="color:white;text-align:center">Hours Minutes Seconds</h5>
         `
