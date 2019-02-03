@@ -116,7 +116,7 @@
         const invoice = data.data.invoices.inv00002;
  
         const hours = Math.floor(invoice.duration / 60);
-        const mins = ((invoice.duration - hours * 60) < 10 ? '0' : '') + invoice.duration - hours * 60;
+        const mins = ((invoice.duration - hours * 60) < 10 ? '0' : '') + (invoice.duration - hours * 60);
 
         document.getElementById("title").innerHTML +=
         `
