@@ -144,11 +144,11 @@
             </tr>
             <tr>
               <td><h4>Parking Fee:
-               <td><h4>$${ invoice.fee }</h4>
+               <td><h4>$${ Math.round(invoice.fee * 100) / 100 }</h4>
             </tr>
             <tr>
               <td><h4>Total Fee:
-              <td><h4>$${ invoice.fee }</h4>
+              <td><h4>$${ Math.round(invoice.fee * 100) / 100 }</h4>
             </tr>
             <tr>
               <td><h4>Payment Info:
