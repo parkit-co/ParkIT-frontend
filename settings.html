@@ -1,39 +1,63 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Sign Up</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/styles-settings.css">
+  <head>
+    <meta charset="utf-8">
+    <title>Settings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles-settings.css">      
+  </head>
 
-        
-    </head>
+  <body>
+    <section id="header">
+      <div class="title">
+        <h1 style = "color: white; padding-top: 60px; padding-left: 20px;">Settings</h1>
+      </div>
+    </section>
 
-    <body>
-      <section id="header">
-        <div class="title">
-          <h1 style = "color: white; padding-top: 60px; padding-left: 20px;">Settings</h1>
-        </div>
-      </section>
+    <section id="title">
+      <div class="methods">
+        <h3 style="color:white; padding-top: 20px; padding-left: 20px;">My Account</h3>
+      </div>
+    </section>
 
-      <section id="title">
-        <div class="methods">
-          <h3 style="color:white; padding-top: 20px; padding-left: 20px;"">My Account</h3>
-        </div>
+    <section id="info">
+      <div id="details">
+      </div>
+      <a href="your-parkits.html">
+        <button>
+          Save
+          <span style="padding-left: 15px">
+              <img src="images/arrow461.png" width="20px" height="20px">
+          </span>
+        </button>
+    </section>
 
-
-
-        Name: <input type="text" name="Name"><br><hr>
-        Email: <input type="text" name="Email"><br><hr>
-        Phone Number: <input type="text" name="Name"><br><hr>
-        Car Model: <input type="text" name="Email"><br><hr>
-        License Plate: <input type="text" name="Name"><br><hr>
-        Password: <input type="text" name="Email"><br><hr>
-        <a href="your-parkits.html"><button>
-            Continue
-            <span style="padding-left: 15px">
-                <img src="images/arrow461.png" width="20px" height="20px">
-            </span>
+      <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+      
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+      
+        // not sure if you can use it like this yet
+        fetch('https://homeparkit.herokuapp.com/client/6TGZ044')
+          .then(data => data.json())
+          .then(data => {
+            const invoice = data.data.invoices.inv00002;
+      
+            document.getElementById("details").innerHTML +=
+            `
+              Name: <input type="text" name="name">${ data.data.name }<br><hr>
+              Email: <input type="text" name="email"><br><hr>
+              Phone Number: <input type="text" name="number"><br><hr>
+              Car Model: <input type="text" name="car">${ data.data.car }<br><hr>
+              License Plate: <input type="text" name="lisence"><br><hr>
+              Password: <input type="text" name="password"><br><hr>
+            `;
+          });
+      </script>
 
     </body>
 </html>

@@ -103,15 +103,6 @@
     fetch('https://homeparkit.herokuapp.com/client/6TGZ044')
       .then(data => data.json())
       .then(data => {
-        /*
-        duration: 22
-        end: "Feb 03, 2019 07:40 AM"
-        fee: 0
-        id: "00002"
-        location: "parkingLot"
-        spot: "spot2"
-        start: "Feb 03, 2019 07:
-        */
         const invoice = data.data.invoices.inv00002;
  
         const hours = Math.floor(invoice.duration / 60);
